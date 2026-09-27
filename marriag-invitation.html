@@ -1,0 +1,653 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ananya & Arjun | Wedding Invitation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, serif;
+    background:linear-gradient(135deg,#2b0714,#6d1835,#260713);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* Glowing background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,215,100,.2),transparent 20%),
+    radial-gradient(circle at 80% 70%,rgba(255,100,180,.15),transparent 25%);
+    pointer-events:none;
+}
+
+/* Opening Screen */
+#opening{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#3b0719,#7d2344);
+    z-index:999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+#opening h1{
+    font-size:55px;
+    color:#ffd86b;
+    text-shadow:0 0 20px #ffd86b;
+}
+
+#opening p{
+    margin:20px;
+    font-size:20px;
+}
+
+.openBtn{
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ffd86b;
+    color:#5b1027;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 0 25px #ffd86b;
+    transition:.3s;
+}
+
+.openBtn:hover{
+    transform:scale(1.1);
+}
+
+/* Main */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,215,100,.5);
+    border-radius:25px;
+    padding:40px 20px;
+    margin:25px 0;
+    box-shadow:0 0 30px rgba(255,215,100,.15);
+    backdrop-filter:blur(8px);
+}
+
+.title{
+    font-size:20px;
+    letter-spacing:5px;
+    color:#ffd86b;
+}
+
+h1{
+    font-size:55px;
+    color:#ffd86b;
+    text-shadow:0 0 15px rgba(255,215,100,.7);
+    margin:15px 0;
+}
+
+.names{
+    font-size:48px;
+    margin:20px 0;
+}
+
+.heart{
+    color:#ff668f;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.3);}
+}
+
+.subtitle{
+    font-size:20px;
+    line-height:1.7;
+}
+
+/* Decorative flowers */
+.flowers{
+    font-size:40px;
+    letter-spacing:15px;
+    margin:20px;
+}
+
+/* Couple */
+.couple{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.person{
+    width:280px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    border:1px solid #ffd86b;
+}
+
+.person .emoji{
+    font-size:80px;
+}
+
+.person h2{
+    color:#ffd86b;
+    margin:10px;
+}
+
+/* Event */
+.events{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.event{
+    width:260px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,215,100,.5);
+}
+
+.event h2{
+    color:#ffd86b;
+}
+
+.event p{
+    margin:10px;
+    line-height:1.6;
+}
+
+/* Countdown */
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.time{
+    width:100px;
+    padding:18px 10px;
+    border-radius:15px;
+    background:#500f27;
+    border:1px solid #ffd86b;
+}
+
+.time span{
+    display:block;
+    font-size:30px;
+    color:#ffd86b;
+    font-weight:bold;
+}
+
+/* Buttons */
+.button{
+    display:inline-block;
+    margin:10px;
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    background:#ffd86b;
+    color:#4a0c20;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #ffd86b;
+}
+
+/* Lights */
+.lights{
+    display:flex;
+    justify-content:space-around;
+    margin:20px 0;
+}
+
+.bulb{
+    width:15px;
+    height:15px;
+    background:#ffd86b;
+    border-radius:50%;
+    box-shadow:0 0 20px #ffd86b;
+    animation:blink 1s infinite alternate;
+}
+
+.bulb:nth-child(2){animation-delay:.2s}
+.bulb:nth-child(3){animation-delay:.4s}
+.bulb:nth-child(4){animation-delay:.6s}
+.bulb:nth-child(5){animation-delay:.8s}
+
+@keyframes blink{
+    from{opacity:.3}
+    to{opacity:1}
+}
+
+/* Candle */
+.candles{
+    font-size:45px;
+    animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 5px orange}
+    to{text-shadow:0 0 30px gold}
+}
+
+/* Footer */
+footer{
+    padding:30px;
+    color:#ffd86b;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    #opening h1{
+        font-size:38px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    .names{
+        font-size:35px;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .card{
+        padding:30px 15px;
+    }
+
+    .person{
+        width:100%;
+    }
+
+    .event{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Opening -->
+<div id="opening">
+
+    <div class="flowers">🌸 ✨ 🌸</div>
+
+    <h1>💍 Wedding Invitation</h1>
+
+    <p>Two hearts, one beautiful journey...</p>
+
+    <button class="openBtn" onclick="openInvitation()">
+        💌 Open Invitation
+    </button>
+
+</div>
+
+
+<div class="container">
+
+<!-- Lights -->
+<div class="lights">
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+</div>
+
+
+<!-- Main Invitation -->
+<section class="card">
+
+    <div class="flowers">🌸 🌺 🌸</div>
+
+    <p class="title">WITH THE BLESSINGS OF OUR FAMILIES</p>
+
+    <h1>Wedding Invitation</h1>
+
+    <p class="subtitle">
+        We joyfully invite you to celebrate
+        the beautiful beginning of a new journey.
+    </p>
+
+    <div class="names">
+        Ananya
+        <span class="heart">♥</span>
+        Arjun
+    </div>
+
+    <p class="subtitle">
+        Together with their families,
+        they invite you to share their special day.
+    </p>
+
+    <div class="candles">🕯️ 🕯️ 🕯️</div>
+
+</section>
+
+
+<!-- Couple -->
+<section class="card">
+
+    <h1>👰 🤵</h1>
+
+    <div class="couple">
+
+        <div class="person">
+            <div class="emoji">👰</div>
+            <h2>Ananya Reddy</h2>
+            <p>Daughter of</p>
+            <p>Mr. & Mrs. Ramesh Reddy</p>
+        </div>
+
+        <div class="person">
+            <div class="emoji">🤵</div>
+            <h2>Arjun Varma</h2>
+            <p>Son of</p>
+            <p>Mr. & Mrs. Suresh Varma</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Events -->
+<section class="card">
+
+    <h1>🌸 Wedding Events 🌸</h1>
+
+    <div class="events">
+
+        <div class="event">
+
+            <h2>💍 Engagement</h2>
+
+            <p>
+                📅 Saturday<br>
+                10 October 2026
+            </p>
+
+            <p>⏰ 6:00 PM</p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h2>💒 Wedding</h2>
+
+            <p>
+                📅 Sunday<br>
+                11 October 2026
+            </p>
+
+            <p>⏰ 10:30 AM</p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h2>🎉 Reception</h2>
+
+            <p>
+                📅 Sunday<br>
+                11 October 2026
+            </p>
+
+            <p>⏰ 6:30 PM onwards</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Countdown -->
+<section class="card">
+
+    <h1>⏳ Countdown</h1>
+
+    <p class="subtitle">
+        Until the beautiful wedding day
+    </p>
+
+    <br>
+
+    <div class="countdown">
+
+        <div class="time">
+            <span id="days">00</span>
+            Days
+        </div>
+
+        <div class="time">
+            <span id="hours">00</span>
+            Hours
+        </div>
+
+        <div class="time">
+            <span id="minutes">00</span>
+            Minutes
+        </div>
+
+        <div class="time">
+            <span id="seconds">00</span>
+            Seconds
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Venue -->
+<section class="card">
+
+    <h1>📍 Venue</h1>
+
+    <h2>Grand Pearl Convention Hall</h2>
+
+    <p class="subtitle">
+        Madhapur, Hyderabad<br>
+        Telangana, India
+    </p>
+
+    <br>
+
+    <a class="button"
+       href="https://www.google.com/maps/search/?api=1&query=Grand+Pearl+Convention+Hall+Madhapur+Hyderabad"
+       target="_blank">
+       📍 Open Location
+    </a>
+
+</section>
+
+
+<!-- Message -->
+<section class="card">
+
+    <div class="flowers">🌹 🌹 🌹</div>
+
+    <h1>❤️ Our Special Day ❤️</h1>
+
+    <p class="subtitle">
+        “Two souls, one heart,
+        and one beautiful journey forever.”
+    </p>
+
+    <br>
+
+    <p class="subtitle">
+        Your presence and blessings
+        will make our special day
+        even more memorable.
+    </p>
+
+</section>
+
+
+<!-- RSVP -->
+<section class="card">
+
+    <h1>💌 RSVP</h1>
+
+    <p class="subtitle">
+        We would love to celebrate this
+        beautiful moment with you!
+    </p>
+
+    <a class="button"
+       href="mailto:rsvp@example.com?subject=Wedding RSVP">
+       ❤️ Confirm Attendance
+    </a>
+
+</section>
+
+
+<footer>
+
+    <div class="flowers">🌸 ✨ 🌸</div>
+
+    <h2>With Love & Best Wishes</h2>
+
+    <p>Reddy & Varma Families</p>
+
+    <br>
+
+    <p>💍 ANANYA & ARJUN 💍</p>
+
+</footer>
+
+</div>
+
+
+<script>
+
+/* Opening Animation */
+function openInvitation(){
+
+    document.getElementById("opening").style.display="none";
+
+    startConfetti();
+
+}
+
+
+/* Countdown */
+
+var weddingDate = new Date("October 11, 2026 10:30:00").getTime();
+
+setInterval(function(){
+
+    var now = new Date().getTime();
+
+    var distance = weddingDate - now;
+
+    var days = Math.floor(distance/(1000*60*60*24));
+
+    var hours = Math.floor(
+        (distance%(1000*60*60*24))/(1000*60*60)
+    );
+
+    var minutes = Math.floor(
+        (distance%(1000*60*60))/(1000*60)
+    );
+
+    var seconds = Math.floor(
+        (distance%(1000*60))/1000
+    );
+
+    document.getElementById("days").innerHTML =
+        days < 0 ? 0 : days;
+
+    document.getElementById("hours").innerHTML =
+        hours < 0 ? 0 : hours;
+
+    document.getElementById("minutes").innerHTML =
+        minutes < 0 ? 0 : minutes;
+
+    document.getElementById("seconds").innerHTML =
+        seconds < 0 ? 0 : seconds;
+
+},1000);
+
+
+/* Confetti */
+
+function startConfetti(){
+
+    for(let i=0;i<80;i++){
+
+        let confetti=document.createElement("div");
+
+        confetti.innerHTML=["🎉","✨","💖","🌸","🎊"][Math.floor(Math.random()*5)];
+
+        confetti.style.position="fixed";
+        confetti.style.left=Math.random()*100+"%";
+        confetti.style.top="-20px";
+        confetti.style.fontSize=(15+Math.random()*20)+"px";
+        confetti.style.zIndex="1000";
+        confetti.style.pointerEvents="none";
+
+        document.body.appendChild(confetti);
+
+        let duration=3000+Math.random()*3000;
+
+        confetti.animate(
+            [
+                {transform:"translateY(0) rotate(0deg)"},
+                {transform:"translateY(110vh) rotate(720deg)"}
+            ],
+            {
+                duration:duration,
+                easing:"linear"
+            }
+        );
+
+        setTimeout(()=>{
+            confetti.remove();
+        },duration);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
