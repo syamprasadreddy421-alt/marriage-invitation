@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ananya & Arjun | Wedding Invitation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,serif;
+    background:
+    linear-gradient(135deg,#250510,#701735,#260612);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* Background Glow */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 15% 20%,rgba(255,215,100,.20),transparent 20%),
+    radial-gradient(circle at 85% 70%,rgba(255,80,160,.18),transparent 25%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* ================= OPENING ================= */
+
+#opening{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle,#8b2b4f,#3b0719 70%);
+    z-index:9999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    animation:openingGlow 3s infinite alternate;
+}
+
+@keyframes openingGlow{
+    from{
+        box-shadow:inset 0 0 30px #ffd86b;
+    }
+    to{
+        box-shadow:inset 0 0 100px #ff668f;
+    }
+}
+
+#opening h1{
+    font-size:55px;
+    color:#ffd86b;
+    text-shadow:
+    0 0 10px #ffd86b,
+    0 0 30px #ffd86b;
+}
+
+#opening p{
+    margin:20px;
+    font-size:20px;
+}
+
+.openBtn{
+    padding:16px 35px;
+    border:none;
+    border-radius:40px;
+
+    background:#ffd86b;
+    color:#5b1027;
+
+    font-size:19px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px #ffd86b,
+    0 0 40px #ffd86b;
+
+    transition:.3s;
+}
+
+.openBtn:hover{
+    transform:scale(1.12);
+}
+
+/* ================= GENERAL ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 15px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,215,100,.6);
+
+    border-radius:25px;
+
+    padding:40px 20px;
+
+    margin:30px 0;
+
+    box-shadow:
+    0 0 30px rgba(255,215,100,.15),
+    inset 0 0 20px rgba(255,255,255,.03);
+
+    backdrop-filter:blur(10px);
+}
+
+.title{
+    font-size:18px;
+    letter-spacing:5px;
+    color:#ffd86b;
+}
+
+h1{
+    font-size:48px;
+    color:#ffd86b;
+
+    text-shadow:
+    0 0 10px #ffd86b,
+    0 0 25px rgba(255,215,100,.5);
+
+    margin:15px 0;
+}
+
+h2{
+    color:#ffd86b;
+}
+
+.subtitle{
+    font-size:19px;
+    line-height:1.8;
+}
+
+/* ================= FLOWERS ================= */
+
+.flowers{
+    font-size:40px;
+    letter-spacing:15px;
+    margin:20px;
+    animation:flowerFloat 2s infinite alternate;
+}
+
+@keyframes flowerFloat{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-8px);
+    }
+}
+
+/* ================= LIGHTS ================= */
+
+.lights{
+    display:flex;
+    justify-content:space-around;
+    margin:20px 0;
+}
+
+.bulb{
+    width:16px;
+    height:16px;
+
+    background:#ffd86b;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #ffd86b,
+    0 0 25px #ffd86b;
+
+    animation:blink 1s infinite alternate;
+}
+
+.bulb:nth-child(2){
+    animation-delay:.2s;
+}
+
+.bulb:nth-child(3){
+    animation-delay:.4s;
+}
+
+.bulb:nth-child(4){
+    animation-delay:.6s;
+}
+
+.bulb:nth-child(5){
+    animation-delay:.8s;
+}
+
+@keyframes blink{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* ================= NAMES ================= */
+
+.names{
+    font-size:50px;
+    margin:25px 0;
+}
+
+.heart{
+    color:#ff668f;
+    display:inline-block;
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.4);
+    }
+}
+
+/* ================= CANDLES ================= */
+
+.candles{
+    font-size:50px;
+    margin-top:20px;
+
+    animation:candleGlow 1s infinite alternate;
+}
+
+@keyframes candleGlow{
+    from{
+        text-shadow:0 0 5px orange;
+    }
+
+    to{
+        text-shadow:
+        0 0 15px orange,
+        0 0 35px gold;
+    }
+}
+
+/* ================= COUPLE ================= */
+
+.couple{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.person{
+    width:300px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid #ffd86b;
+
+    transition:.4s;
+}
+
+.person:hover{
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:
+    0 0 30px rgba(255,215,100,.5);
+}
+
+.person .emoji{
+    font-size:85px;
+}
+
+.person h2{
+    margin:15px;
+    color:#ffd86b;
+}
+
+/* ================= EVENTS ================= */
+
+.events{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.event{
+    width:250px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,215,100,.5);
+
+    transition:.3s;
+}
+
+.event:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 25px rgba(255,215,100,.4);
+}
+
+.event h2{
+    margin-bottom:15px;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.time{
+    width:110px;
+
+    padding:20px 10px;
+
+    border-radius:18px;
+
+    background:#500f27;
+
+    border:1px solid #ffd86b;
+
+    box-shadow:0 0 15px rgba(255,215,100,.2);
+}
+
+.time span{
+    display:block;
+
+    font-size:32px;
+
+    color:#ffd86b;
+
+    font-weight:bold;
+}
+
+/* ================= FOOD ================= */
+
+.foodEmoji{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.food-list{
+    font-size:17px;
+    line-height:2;
+}
+
+/* ================= BUTTON ================= */
+
+.button{
+    display:inline-block;
+
+    margin:10px;
+
+    padding:14px 27px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    background:#ffd86b;
+
+    color:#4a0c20;
+
+    font-weight:bold;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 0 10px rgba(255,215,100,.3);
+}
+
+.button:hover{
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:
+    0 0 15px #ffd86b,
+    0 0 30px #ffd86b;
+}
+
+/* ================= GUEST CARD ================= */
+
+.cardInput{
+    width:90%;
+    max-width:350px;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    border:2px solid #ffd86b;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:18px;
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+}
+
+.cardInput::placeholder{
+    color:#ddd;
+}
+
+.guestResult{
+    margin:25px auto;
+
+    padding:25px;
+
+    max-width:500px;
+
+    border-radius:25px;
+
+    background:rgba(255,215,100,.10);
+
+    border:1px solid #ffd86b;
+
+    line-height:2;
+
+    display:none;
+
+    animation:resultShow .5s ease;
+}
+
+@keyframes resultShow{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.roomNumber{
+    color:#ff9fc0;
+
+    font-size:28px;
+}
+
+.tableNumber{
+    font-size:50px;
+
+    color:#ffd86b;
+
+    text-shadow:
+    0 0 15px #ffd86b,
+    0 0 30px #ffd86b;
+}
+
+/* ================= TABLE SELECTION ================= */
+
+.table-container{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin:25px auto;
+
+    max-width:700px;
+}
+
+.table{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#4c1026;
+
+    border:2px solid #ffd86b;
+
+    color:#ffd86b;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.table:hover{
+    transform:scale(1.15);
+
+    box-shadow:0 0 20px #ffd86b;
+}
+
+.table.selected{
+    background:#ffd86b;
+
+    color:#4c1026;
+
+    box-shadow:
+    0 0 15px #ffd86b,
+    0 0 30px #ffd86b;
+}
+
+.table.disabled{
+    background:#555;
+
+    border-color:#777;
+
+    color:#aaa;
+
+    cursor:not-allowed;
+
+    opacity:.5;
+}
+
+#tableMessage{
+    margin:15px;
+
+    font-size:18px;
+
+    color:#ffd86b;
+}
+
+/* ================= MAP ================= */
+
+.mapBox{
+    border-radius:20px;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.06);
+}
+
+/* ================= RSVP ================= */
+
+.rsvp{
+    font-size:45px;
+
+    animation:pulse 1.5s infinite;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:40px 20px;
+
+    color:#ffd86b;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    #opening h1{
+        font-size:35px;
+    }
+
+    #opening p{
+        font-size:16px;
+    }
+
+    h1{
+        font-size:35px;
+    }
+
+    .names{
+        font-size:35px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .card{
+        padding:30px 15px;
+    }
+
+    .person{
+        width:100%;
+    }
+
+    .event{
+        width:100%;
+    }
+
+    .time{
+        width:85px;
+    }
+
+    .time span{
+        font-size:25px;
+    }
+
+    .flowers{
+        font-size:30px;
+        letter-spacing:5px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= OPENING ================= -->
+
+<div id="opening">
+
+    <div class="flowers">
+        🌸 ✨ 🌸 ✨ 🌸
+    </div>
+
+    <h1>💍 Wedding Invitation</h1>
+
+    <p>
+        Two hearts, one beautiful journey...
+    </p>
+
+    <button class="openBtn" onclick="openInvitation()">
+        💌 Open Invitation
+    </button>
+
+</div>
+
+
+
+<div class="container">
+
+
+<!-- ================= LIGHTS ================= -->
+
+<div class="lights">
+
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+    <div class="bulb"></div>
+
+</div>
+
+
+
+<!-- ================= MAIN INVITATION ================= -->
+
+<section class="card">
+
+    <div class="flowers">
+        🌸 🌺 🌸
+    </div>
+
+    <p class="title">
+        WITH THE BLESSINGS OF OUR FAMILIES
+    </p>
+
+    <h1>
+        Wedding Invitation
+    </h1>
+
+    <p class="subtitle">
+        We joyfully invite you to celebrate
+        the beautiful beginning of a new journey.
+    </p>
+
+    <div class="names">
+
+        Ananya
+
+        <span class="heart">
+            ♥
+        </span>
+
+        Arjun
+
+    </div>
+
+    <p class="subtitle">
+
+        Together with their families,
+        they invite you to share their special day.
+
+    </p>
+
+    <div class="candles">
+        🕯️ 🕯️ 🕯️
+    </div>
+
+</section>
+
+
+
+<!-- ================= COUPLE ================= -->
+
+<section class="card">
+
+    <h1>
+        👰 🤵
+    </h1>
+
+    <div class="couple">
+
+        <div class="person">
+
+            <div class="emoji">
+                👰
+            </div>
+
+            <h2>
+                Ananya Reddy
+            </h2>
+
+            <p>
+                Daughter of
+            </p>
+
+            <p>
+                Mr. & Mrs. Ramesh Reddy
+            </p>
+
+        </div>
+
+
+        <div class="person">
+
+            <div class="emoji">
+                🤵
+            </div>
+
+            <h2>
+                Arjun Varma
+            </h2>
+
+            <p>
+                Son of
+            </p>
+
+            <p>
+                Mr. & Mrs. Suresh Varma
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EVENTS ================= -->
+
+<section class="card">
+
+    <h1>
+        🌸 Wedding Events 🌸
+    </h1>
+
+    <div class="events">
+
+
+        <div class="event">
+
+            <h2>
+                💍 Engagement
+            </h2>
+
+            <p>
+                📅 Saturday<br>
+                10 October 2026
+            </p>
+
+            <p>
+                ⏰ 6:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h2>
+                💒 Wedding
+            </h2>
+
+            <p>
+                📅 Sunday<br>
+                11 October 2026
+            </p>
+
+            <p>
+                ⏰ 10:30 AM
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h2>
+                🎉 Reception
+            </h2>
+
+            <p>
+                📅 Sunday<br>
+                11 October 2026
+            </p>
+
+            <p>
+                ⏰ 6:30 PM onwards
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= COUNTDOWN ================= -->
+
+<section class="card">
+
+    <h1>
+        ⏳ Countdown
+    </h1>
+
+    <p class="subtitle">
+        Until the beautiful wedding day
+    </p>
+
+    <br>
+
+    <div class="countdown">
+
+
+        <div class="time">
+
+            <span id="days">
+                00
+            </span>
+
+            Days
+
+        </div>
+
+
+        <div class="time">
+
+            <span id="hours">
+                00
+            </span>
+
+            Hours
+
+        </div>
+
+
+        <div class="time">
+
+            <span id="minutes">
+                00
+            </span>
+
+            Minutes
+
+        </div>
+
+
+        <div class="time">
+
+            <span id="seconds">
+                00
+            </span>
+
+            Seconds
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOD MENU ================= -->
+
+<section class="card">
+
+    <div class="flowers">
+        🍽️ ✨ 🍽️
+    </div>
+
+    <h1>
+        🍴 Wedding Food Menu
+    </h1>
+
+    <p class="subtitle">
+        Delicious food prepared with love ❤️
+    </p>
+
+    <br>
+
+
+    <div class="events">
+
+
+        <div class="event">
+
+            <div class="foodEmoji">
+                🥗
+            </div>
+
+            <h2>
+                Starters
+            </h2>
+
+            <p class="food-list">
+
+                🥟 Veg Manchurian<br>
+                🧀 Paneer Tikka<br>
+                🌽 Sweet Corn<br>
+                🥗 Veg Spring Rolls
+
+            </p>
+
+        </div>
+
+
+
+        <div class="event">
+
+            <div class="foodEmoji">
+                🍛
+            </div>
+
+            <h2>
+                Main Course
+            </h2>
+
+            <p class="food-list">
+
+                🍚 Veg Biryani<br>
+                🍛 Paneer Curry<br>
+                🫓 Naan<br>
+                🍚 Fried Rice<br>
+                🥘 Dal
+
+            </p>
+
+        </div>
+
+
+
+        <div class="event">
+
+            <div class="foodEmoji">
+                🍰
+            </div>
+
+            <h2>
+                Desserts
+            </h2>
+
+            <p class="food-list">
+
+                🍨 Ice Cream<br>
+                🍰 Wedding Cake<br>
+                🍮 Gulab Jamun<br>
+                🍓 Fruit Salad
+
+            </p>
+
+        </div>
+
+
+
+        <div class="event">
+
+            <div class="foodEmoji">
+                🥤
+            </div>
+
+            <h2>
+                Drinks
+            </h2>
+
+            <p class="food-list">
+
+                🥤 Cool Drinks<br>
+                🧃 Fresh Juice<br>
+                ☕ Coffee<br>
+                🍵 Tea
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GUEST CARD ================= -->
+
+<section class="card">
+
+    <div class="flowers">
+        🎫 ✨ 🎫
+    </div>
+
+    <h1>
+        🎟️ Guest Card
+    </h1>
+
+    <p class="subtitle">
+
+        Enter your invitation card number
+        to find your room and table.
+
+    </p>
+
+    <br>
+
+
+    <input
+        type="number"
+        id="cardNumber"
+        class="cardInput"
+        placeholder="Enter Card Number"
+    >
+
+
+    <br>
+
+
+    <button
+        class="button"
+        onclick="findGuest()">
+
+        🔍 Find My Details
+
+    </button>
+
+
+    <div
+        id="guestResult"
+        class="guestResult">
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= TABLE SELECTION ================= -->
+
+<section class="card">
+
+    <div class="flowers">
+        🪑 ✨ 🪑
+    </div>
+
+    <h1>
+        🪑 Select Your Table
+    </h1>
+
+    <p class="subtitle">
+
+        First enter your card number above.
+        Then select an available table.
+
+    </p>
+
+
+    <div
+        id="tableMessage">
+
+        🔒 Enter your card number first.
+
+    </div>
+
+
+    <div
+        class="table-container"
+        id="tables">
+
+        <div class="table disabled">1</div>
+        <div class="table disabled">2</div>
+        <div class="table disabled">3</div>
+        <div class="table disabled">4</div>
+        <div class="table disabled">5</div>
+        <div class="table disabled">6</div>
+        <div class="table disabled">7</div>
+        <div class="table disabled">8</div>
+        <div class="table disabled">9</div>
+        <div class="table disabled">10</div>
+
+    </div>
+
+
+    <button
+        class="button"
+        onclick="confirmTable()">
+
+        ✅ Confirm Table
+
+    </button>
+
+
+</section>
+
+
+
+<!-- ================= VENUE ================= -->
+
+<section class="card">
+
+    <h1>
+        📍 Venue
+    </h1>
+
+    <div class="mapBox">
+
+        <h2>
+            Grand Pearl Convention Hall
+        </h2>
+
+        <br>
+
+        <p class="subtitle">
+
+            Madhapur, Hyderabad<br>
+            Telangana, India
+
+        </p>
+
+    </div>
+
+
+    <br>
+
+
+    <a
+        class="button"
+        href="https://www.google.com/maps/search/?api=1&query=Grand+Pearl+Convention+Hall+Madhapur+Hyderabad"
+        target="_blank">
+
+        📍 Open Location
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= SPECIAL MESSAGE ================= -->
+
+<section class="card">
+
+    <div class="flowers">
+        🌹 🌹 🌹
+    </div>
+
+    <h1>
+        ❤️ Our Special Day ❤️
+    </h1>
+
+    <p class="subtitle">
+
+        “Two souls, one heart,
+        and one beautiful journey forever.”
+
+    </p>
+
+    <br>
+
+    <p class="subtitle">
+
+        Your presence and blessings
+        will make our special day
+        even more memorable.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= RSVP ================= -->
+
+<section class="card">
+
+    <div class="rsvp">
+        💌
+    </div>
+
+    <h1>
+        RSVP
+    </h1>
+
+    <p class="subtitle">
+
+        We would love to celebrate
+        this beautiful moment with you!
+
+    </p>
+
+
+    <a
+        class="button"
+        href="mailto:rsvp@example.com?subject=Wedding RSVP">
+
+        ❤️ Confirm Attendance
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="flowers">
+        🌸 ✨ 🌸
+    </div>
+
+    <h2>
+        With Love & Best Wishes
+    </h2>
+
+    <br>
+
+    <p>
+        Reddy & Varma Families
+    </p>
+
+    <br>
+
+    <p>
+        💍 ANANYA & ARJUN 💍
+    </p>
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+/* ================= OPEN INVITATION ================= */
+
+function openInvitation(){
+
+    document.getElementById("opening").style.display="none";
+
+    startConfetti();
+
+}
+
+
+/* ================= COUNTDOWN ================= */
+
+var weddingDate =
+new Date("October 11, 2026 10:30:00").getTime();
+
+
+setInterval(function(){
+
+    var now =
+    new Date().getTime();
+
+    var distance =
+    weddingDate - now;
+
+
+    var days =
+    Math.floor(
+        distance/(1000*60*60*24)
+    );
+
+
+    var hours =
+    Math.floor(
+        (distance%(1000*60*60*24))
+        /(1000*60*60)
+    );
+
+
+    var minutes =
+    Math.floor(
+        (distance%(1000*60*60))
+        /(1000*60)
+    );
+
+
+    var seconds =
+    Math.floor(
+        (distance%(1000*60))
+        /1000
+    );
+
+
+    document.getElementById("days").innerHTML =
+    days < 0 ? 0 : days;
+
+
+    document.getElementById("hours").innerHTML =
+    hours < 0 ? 0 : hours;
+
+
+    document.getElementById("minutes").innerHTML =
+    minutes < 0 ? 0 : minutes;
+
+
+    document.getElementById("seconds").innerHTML =
+    seconds < 0 ? 0 : seconds;
+
+
+},1000);
+
+
+
+/* ================= GUEST DATA ================= */
+
+/*
+    Card Number
+        ↓
+    Guest Name
+        ↓
+    Room Number
+        ↓
+    Default Table
+*/
+
+
+const guests = {
+
+    101:{
+        name:"Guest 1",
+        room:"Room 201",
+        defaultTable:5
+    },
+
+    102:{
+        name:"Guest 2",
+        room:"Room 202",
+        defaultTable:8
+    },
+
+    103:{
+        name:"Guest 3",
+        room:"Room 203",
+        defaultTable:2
+    },
+
+    104:{
+        name:"Guest 4",
+        room:"Room 204",
+        defaultTable:10
+    },
+
+    105:{
+        name:"Guest 5",
+        room:"Room 205",
+        defaultTable:3
+    }
+
+};
+
+
+
+let currentCard = null;
+
+let selectedTable = null;
+
+
+
+/* ================= FIND GUEST ================= */
+
+function findGuest(){
+
+    let card =
+    document.getElementById("cardNumber").value;
+
+    let result =
+    document.getElementById("guestResult");
+
+
+    if(guests[card]){
+
+        currentCard = card;
+
+        let guest =
+        guests[card];
+
+
+        result.style.display="block";
+
+
+        result.innerHTML = `
+
+            <h2>
+                🎉 Welcome ${guest.name}!
+            </h2>
+
+            <p>
+                🎫 Card Number:
+                <b>${card}</b>
+            </p>
+
+            <p>
+                🏨 Your Room:
+                <span class="roomNumber">
+                    ${guest.room}
+                </span>
+            </p>
+
+            <p>
+                🪑 Suggested Table:
+            </p>
+
+            <div class="tableNumber">
+                ${guest.defaultTable}
+            </div>
+
+            <p>
+                👇 You can select another
+                available table below.
+            </p>
+
+        `;
+
+
+        enableTables();
+
+    }
+
+    else{
+
+        currentCard = null;
+
+        result.style.display="block";
+
+
+        result.innerHTML = `
+
+            <h2>
+                ❌ Card Not Found
+            </h2>
+
+            <p>
+                Please enter a valid
+                invitation card number.
+            </p>
+
+        `;
+
+
+        disableTables();
+
+    }
+
+}
+
+
+
+/* ================= ENABLE TABLES ================= */
+
+function enableTables(){
+
+    let tables =
+    document.querySelectorAll(".table");
+
+
+    tables.forEach(function(table){
+
+        table.classList.remove("disabled");
+
+    });
+
+
+    document.getElementById("tableMessage").innerHTML =
+    "🟢 Choose an available table.";
+
+
+    tables.forEach(function(table){
+
+        table.onclick = function(){
+
+            if(
+                table.classList.contains("disabled")
+            ){
+                return;
+            }
+
+
+            tables.forEach(function(t){
+
+                t.classList.remove("selected");
+
+            });
+
+
+            table.classList.add("selected");
+
+
+            selectedTable =
+            table.innerText;
+
+
+            document.getElementById("tableMessage").innerHTML =
+            "✨ Table " +
+            selectedTable +
+            " selected.";
+
+        };
+
+    });
+
+}
+
+
+
+/* ================= DISABLE TABLES ================= */
+
+function disableTables(){
+
+    let tables =
+    document.querySelectorAll(".table");
+
+
+    tables.forEach(function(table){
+
+        table.classList.add("disabled");
+
+        table.classList.remove("selected");
+
+        table.onclick=null;
+
+    });
+
+
+    selectedTable=null;
+
+
+    document.getElementById("tableMessage").innerHTML =
+    "🔒 Enter a valid card number first.";
+
+}
+
+
+
+/* ================= CONFIRM TABLE ================= */
+
+function confirmTable(){
+
+    if(!currentCard){
+
+        alert(
+            "Please enter your Card Number first."
+        );
+
+        return;
+
+    }
+
+
+    if(!selectedTable){
+
+        alert(
+            "Please select a table first."
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "🎉 Table " +
+        selectedTable +
+        " confirmed for Card " +
+        currentCard +
+        "!"
+    );
+
+}
+
+
+
+/* ================= CONFETTI ================= */
+
+function startConfetti(){
+
+    for(
+        let i=0;
+        i<100;
+        i++
+    ){
+
+        let confetti =
+        document.createElement("div");
+
+
+        confetti.innerHTML =
+        [
+            "🎉",
+            "✨",
+            "💖",
+            "🌸",
+            "🎊",
+            "💍"
+        ][
+            Math.floor(
+                Math.random()*6
+            )
+        ];
+
+
+        confetti.style.position="fixed";
+
+        confetti.style.left =
+        Math.random()*100+"%";
+
+        confetti.style.top="-20px";
+
+        confetti.style.fontSize =
+        (15+Math.random()*20)+"px";
+
+        confetti.style.zIndex="10000";
+
+        confetti.style.pointerEvents="none";
+
+
+        document.body.appendChild(
+            confetti
+        );
+
+
+        let duration =
+        3000 +
+        Math.random()*3000;
+
+
+        confetti.animate(
+
+            [
+
+                {
+                    transform:
+                    "translateY(0) rotate(0deg)"
+                },
+
+                {
+                    transform:
+                    "translateY(110vh) rotate(720deg)"
+                }
+
+            ],
+
+            {
+
+                duration:duration,
+
+                easing:"linear"
+
+            }
+
+        );
+
+
+        setTimeout(
+            ()=>{
+                confetti.remove();
+            },
+            duration
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
